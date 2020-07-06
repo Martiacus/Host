@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - TablePlanBuilderButton
+  - TablePlanSelectionButton
+  - TablePlanHostButton
+  - TablePlanButtonTableImage
+  - TablePlanCanvas
+  - PreviewTablePlanButton
+  - Table
+  - BookingCanvasButton
+  - BookingHostingButton
+  - DisplayPeople
+  - DisplayPeopleForManager
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Time
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
