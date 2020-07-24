@@ -188,4 +188,17 @@ public class TableWantsToMoveController : MonoBehaviour
         }
         return count;
     }
+
+    /// <summary>
+    /// Deletes old buttons upon exiting canvas
+    /// </summary>
+    public void DestroyOldButtons()
+    {
+        GameObject[] buttons = GameObject.FindGameObjectsWithTag("DisplayTablePlansForMoving");
+
+        foreach(GameObject button in buttons)
+        {
+            Destroy(button);
+        }
+    }
 }
