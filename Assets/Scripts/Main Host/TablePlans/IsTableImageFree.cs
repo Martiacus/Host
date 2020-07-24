@@ -21,7 +21,7 @@ public class IsTableImageFree : MonoBehaviour
     /// </summary>
     public void SetTableColorToRed()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(200, 50, 50, 255);
         isTableFree = false;
     }
 
@@ -30,7 +30,7 @@ public class IsTableImageFree : MonoBehaviour
     /// </summary>
     public void SetTableColorToGreen()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(50, 200, 50, 255);
         isTableFree = true;
     }
 
@@ -39,7 +39,7 @@ public class IsTableImageFree : MonoBehaviour
     /// </summary>
     public void SetTableColorToOrange()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 165, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(200, 100, 50, 255);
         isTableFree = false;
     }
 
@@ -48,7 +48,7 @@ public class IsTableImageFree : MonoBehaviour
     /// </summary>
     public void SetTableColorToBlue()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(0, 0, 255, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(50, 50, 200, 255);
         isTableFree = true;
     }
 
@@ -57,7 +57,7 @@ public class IsTableImageFree : MonoBehaviour
     /// </summary>
     public void SetTableColorToYellow()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 100, 255);
         isTableFree = true;
     }
 }

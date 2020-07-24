@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public static class SaveController
 {
+    /// <summary>
+    /// Saves user settings
+    /// </summary>
     public static void SaveSettings()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -17,6 +20,10 @@ public static class SaveController
         stream.Close();
     }
 
+    /// <summary>
+    /// Saves user created table plans
+    /// </summary>
+    /// <param name="plansGameobject"> table plans gameobhect that we want to save</param>
     public static void SaveUserTablePlans(TablePlans plansGameobject)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -29,6 +36,10 @@ public static class SaveController
         stream.Close();
     }
 
+    /// <summary>
+    /// Saves the names and emails of the user from mailing list
+    /// </summary>
+    /// <param name="people"></param>
     public static void SaveMailingList(List<string> people)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -42,6 +53,10 @@ public static class SaveController
 
     }
 
+    /// <summary>
+    /// Loads settings from file
+    /// </summary>
+    /// <returns></returns>
     public static SaveUserSettings LoadSettings()
     {
         string path = Path.Combine(Application.persistentDataPath, "settings.host");
@@ -62,6 +77,10 @@ public static class SaveController
         }
     }
 
+    /// <summary>
+    /// Loads table plans from file
+    /// </summary>
+    /// <returns></returns>
     public static SaveTablePlans LoadTablePlans()
     {
         string path = Path.Combine(Application.persistentDataPath, "tablePlans.host");
@@ -82,6 +101,10 @@ public static class SaveController
         }
     }
 
+    /// <summary>
+    /// Loads mailing list from file
+    /// </summary>
+    /// <returns></returns>
     public static SaveMailingList LoadMailingList()
     {
         string path = Path.Combine(Application.persistentDataPath, "mailingList.host");

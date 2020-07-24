@@ -31,6 +31,9 @@ public class ReportsController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Loads saved data from a file if it exists
+    /// </summary>
     public void LoadData()
     {
         if(SaveController.LoadMailingList() != null)
@@ -51,8 +54,10 @@ public class ReportsController : MonoBehaviour
         CreateDisplayPeople();
     }
 
-    
-
+    /// <summary>
+    /// This string collects email adresses for sending
+    /// </summary>
+    /// <returns></returns>
     public List<string> CollectEmails()
     {
         List<string> collectedEmails = new List<string>();
@@ -91,6 +96,11 @@ public class ReportsController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Here we add a new person to our mailing list
+    /// </summary>
+    /// <param name="personName"></param>
+    /// <param name="personEmail"></param>
     public void AddPerson(string personName, string personEmail)
     {
         if(people == null || people.Count > 0)
@@ -103,19 +113,43 @@ public class ReportsController : MonoBehaviour
         Save();
     }
 
+    /// <summary>
+    /// Here we enable the edit person canvas and delete the old entry and create a new one regarless if the edit was made, if no edit was made we just create an identical copy of the old one
+    /// </summary>
+    /// <param name="senderName"></param>
+    /// <param name="senderEmail"></param>
     public void EditPerson(string senderName, string senderEmail)
     {
         editPersonCanvas.SetActive(true);
         editPersonCanvas.GetComponent<ReceiveAPeersonToEdit>().ReceiveInfo(senderName, senderEmail);
-        DeletePerson(senderName, senderEmail);
+        DeletePersonNoConfirmation(senderName, senderEmail);
     }
 
+    /// <summary>
+    /// Here we delete a person without confirmting with the user
+    /// </summary>
+    /// <param name="name"> Name of the person we want to delete</param>
+    /// <param name="email"> Email of the person we want to delete</param>
+    public void DeletePersonNoConfirmation(string name, string email)
+    {
+        personToDelete = new Person(name, email);
+        ConfirmDelete();
+    }
+
+    /// <summary>
+    /// Here we set a person we want to delete and ask for confirmation
+    /// </summary>
+    /// <param name="name"> Name of the person we want to delete</param>
+    /// <param name="email"> Email of the person we want to delete</param>
     public void DeletePerson(string name, string email)
     {
         deletionConfirmation.SetActive(true);
         personToDelete = new Person(name, email);
     }
 
+    /// <summary>
+    /// Here we delete a person after getting confirmation
+    /// </summary>
     public void ConfirmDelete()
     {
         deletionConfirmation.SetActive(false);
@@ -133,11 +167,18 @@ public class ReportsController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Here we save the people
+    /// </summary>
     private void Save()
     {
         SaveController.SaveMailingList(FormatPeopleClassToString());
     }
 
+    /// <summary>
+    /// Here we format people to a single string instead of different strings for saving
+    /// </summary>
+    /// <returns></returns>
     private List<string> FormatPeopleClassToString()
     {
         List<string> tempString = new List<string>();

@@ -14,11 +14,17 @@ public class PersonManagement : MonoBehaviour
         reportsController = this.gameObject.transform.parent.parent.parent.parent.parent.GetComponent<ReportsController>();
     }
 
+    /// <summary>
+    /// Sends information about deletion request
+    /// </summary>
     public void Delete()
     {
         reportsController.DeletePerson(nameField.text, emailField.text);
     }
 
+    /// <summary>
+    /// Sends information about edit request
+    /// </summary>
     public void Edit()
     {
         reportsController.EditPerson(nameField.text, emailField.text);

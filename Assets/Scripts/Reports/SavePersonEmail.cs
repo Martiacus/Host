@@ -15,6 +15,9 @@ public class SavePersonEmail : MonoBehaviour
 
     public DisableCanvas disableCanvas;
 
+    /// <summary>
+    /// Checks for errors in used input
+    /// </summary>
     public void CheckErrors()
     {
         if(nameText.text == null || nameText.text == "")    // Checks if the name field is empty
@@ -53,10 +56,10 @@ public class SavePersonEmail : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks string if it at least resembles and email(not perfect)
+    /// Checks string if it at least resembles an email(not perfect)
     /// </summary>
     /// <param name="s"> Email string</param>
-    /// <returns> True if the email is valid, false if not</returns>
+    /// <returns> True if the email format is valid, false if not</returns>
     private bool IsValidEmailAddress(string s)
     {
         if (string.IsNullOrEmpty(s))

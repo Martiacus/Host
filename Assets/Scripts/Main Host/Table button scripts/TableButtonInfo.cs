@@ -332,7 +332,7 @@ public class TableButtonInfo : MonoBehaviour
     /// </summary>
     private void SetTableColorToRed()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 0 , 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(200, 50, 50, 255);
         controller.GetComponent<Controller>().GetTableImageByTableGameobject(this.gameObject.transform.parent.parent.name, this.gameObject.name).GetComponent<IsTableImageFree>().SetTableColorToRed();
     }
 
@@ -341,7 +341,7 @@ public class TableButtonInfo : MonoBehaviour
     /// </summary>
     private void SetTableColorToGreen()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(50, 200, 50, 255);
         controller.GetComponent<Controller>().GetTableImageByTableGameobject(this.gameObject.transform.parent.parent.name, this.gameObject.name).GetComponent<IsTableImageFree>().SetTableColorToGreen();
 
     }
@@ -351,7 +351,7 @@ public class TableButtonInfo : MonoBehaviour
     /// </summary>
     private void SetTableColorToOrange()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 165, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(200, 100, 50, 255);
         controller.GetComponent<Controller>().GetTableImageByTableGameobject(this.gameObject.transform.parent.parent.name, this.gameObject.name).GetComponent<IsTableImageFree>().SetTableColorToOrange();
     }
 
@@ -360,7 +360,7 @@ public class TableButtonInfo : MonoBehaviour
     /// </summary>
     private void SetTableColorToBlue()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(0, 0, 255, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(50, 50, 200, 255);
         controller.GetComponent<Controller>().GetTableImageByTableGameobject(this.gameObject.transform.parent.parent.name, this.gameObject.name).GetComponent<IsTableImageFree>().SetTableColorToBlue();
     }
 
@@ -369,7 +369,7 @@ public class TableButtonInfo : MonoBehaviour
     /// </summary>
     private void SetTableColorToYellow()
     {
-        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+        this.gameObject.transform.Find("Image").gameObject.GetComponent<Image>().color = new Color32(255, 255, 100, 255);
         controller.GetComponent<Controller>().GetTableImageByTableGameobject(this.gameObject.transform.parent.parent.name, this.gameObject.name).GetComponent<IsTableImageFree>().SetTableColorToYellow();
     }
 

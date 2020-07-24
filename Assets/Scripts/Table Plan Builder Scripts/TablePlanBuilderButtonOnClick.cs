@@ -37,7 +37,7 @@ public class TablePlanBuilderButtonOnClick : MonoBehaviour
     private void SetColorToBlack()
     {
         colorID = 1;
-        this.gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 100);
+        this.gameObject.GetComponent<Image>().color = new Color(50, 50, 50, 100);
     }
 
     /// <summary>
@@ -46,13 +46,13 @@ public class TablePlanBuilderButtonOnClick : MonoBehaviour
     private void SetColorToWhite()
     {
         colorID = 0;
-        this.gameObject.GetComponent<Image>().color = new Color(255, 255, 255, 100);
+        this.gameObject.GetComponent<Image>().color = new Color(200, 200, 200, 100);
     }
 
     // Here we set the color to green
     private void SetColorToGreen()
     {
         colorID = 2;
-        this.gameObject.GetComponent<Image>().color = new Color(0,255,0,100);
+        this.gameObject.GetComponent<Image>().color = new Color(50,200,50,100);
     }
 }

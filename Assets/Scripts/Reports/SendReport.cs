@@ -12,6 +12,9 @@ public class SendReport : MonoBehaviour
     public ReportsController reportsController;
     public ErrorStateCanvas error;
 
+    /// <summary>
+    /// Checks if we have any data to send and seds and email to selected recipients if we have data. You cannot send to 0 recipients
+    /// </summary>
     public void OnClick()
     {
         if (reportsController.CollectEmails().Count == 0)
@@ -30,6 +33,9 @@ public class SendReport : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sends an email with the format and data required
+    /// </summary>
     private void SendEmail()
     {
         MailMessage mail = new MailMessage();
@@ -77,6 +83,10 @@ public class SendReport : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Here we make a message string from the data we have collected
+    /// </summary>
+    /// <returns></returns>
     public string Message()
     {
         string message = CollectData.GetInformation();
