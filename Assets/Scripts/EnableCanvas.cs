@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableCanvas : MonoBehaviour
 {
-    public GameObject canvasToEnable;          // Here we set the canvas we are going to disable
+    public GameObject canvasToEnable;          // Here we set the canvas we are going to enable
 
     public void OnClick()
     {

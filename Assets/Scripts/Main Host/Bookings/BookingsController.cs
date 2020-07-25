@@ -255,6 +255,11 @@ public class BookingsController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Here we enable the display extra information canvas
+    /// </summary>
+    /// <param name="nameBooked"> The name of the booking that we want extra info on</param>
+    /// <param name="pax"> Pax of the booking</param>
     public void DisplayExtraInfo(string nameBooked, int pax)
     {
         if (!extraInfoText.activeSelf)

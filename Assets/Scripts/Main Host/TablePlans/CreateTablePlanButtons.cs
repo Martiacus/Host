@@ -22,7 +22,7 @@ public class CreateTablePlanButtons : MonoBehaviour
     /// We check all the possible combinations of numbers from 1 to table plan count that multiplied have at least 5 spaces
     /// Those spaces are then added to our score, because we want as few spaces as possible to use we use the lower the score the better
     /// Since 1 * spaces count would always be the lowest we do another test to check for numbers that are as close to each other as possible
-    /// So we add to our score the difference between numbers to our score so the closer the numbers are to each other the lower the score
+    /// So we add to our score the difference between numbers so the closer the numbers are to each other the lower the score
     /// And now we have our most optimal grid layout for that ammount of data
     /// FORMULA(count = table plans count, i = yaxis, j = xaxis(because j will be larger and we have more space on the x axis we want it always equal or larger than y axis)):
     /// if j * i >= count score = count * count + 1 (this is just a precaution to get the lowest minimmum score possible + 1) (we test if i*j provides at least enaugh spaces for us to use if not we dont need them and assign a high score)
@@ -30,7 +30,7 @@ public class CreateTablePlanButtons : MonoBehaviour
     /// </summary>
     private void FindXYCount()
     {
-        int minScore = -1;             // We set a minscore very high so we calculate only the lowest value
+        int minScore = -1;             // We set the score to a negative values, we fix this later bu cheking if the score is less than 0
         int minXValue = 0;
         int minYValue = 0;
         int tempscore;                      // Here we store our temporary score before comparing it with the minimum score
@@ -39,7 +39,7 @@ public class CreateTablePlanButtons : MonoBehaviour
         {
             for (int j = i; j <= data.GetComponent<TablePlans>().selectedTablePlans.Count; j++)     // Our x axis
             {
-                if (j * i < data.GetComponent<TablePlans>().selectedTablePlans.Count)
+                if (j * i < data.GetComponent<TablePlans>().selectedTablePlans.Count)               // if x * y axis spaces count is lower than the spaces we need we assign the highest values possible + 1.
                 {
                     tempscore = data.GetComponent<TablePlans>().selectedTablePlans.Count * data.GetComponent<TablePlans>().selectedTablePlans.Count +1; // We set the highest possible score +1
                 }
@@ -47,11 +47,11 @@ public class CreateTablePlanButtons : MonoBehaviour
                 {
                     tempscore = j * i + (j - i);        // Here we set the proper score
                 }
-                if(tempscore < minScore || minScore < 0)                // Checking if we got a lower score and assigning it if we ded
+                if(tempscore < minScore || minScore < 0)                // Checking if we got a lower score and assigning it if we did or if the minimmum score is below 0 because that is impossible and we use this for setting the first data values
                 {
-                    minXValue = j;
-                    minYValue = i;
-                    minScore = tempscore;
+                    minXValue = j;                      // We set the temporary x coordinate value
+                    minYValue = i;                      // We set the temporary y coordinate value
+                    minScore = tempscore;               // Setting a new minimum score
                 }
             }
         }

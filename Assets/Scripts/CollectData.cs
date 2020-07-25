@@ -63,6 +63,9 @@ public static class CollectData
         }
     }
 
+    /// <summary>
+    /// Here we reset the data to 0 values to start collecting new data
+    /// </summary>
     public static void StartCollecting()
     {
         bookingsCount = 0;
@@ -160,6 +163,10 @@ public static class CollectData
         tableStay.Add(new TableStay(stayTime, pax));
     }
 
+    /// <summary>
+    /// Here we get all the information and make it into a string format that we will be sending to the user
+    /// </summary>
+    /// <returns> Collected information in string format</returns>
     public static string GetInformation()
     {
         string temp;
@@ -180,6 +187,11 @@ public static class CollectData
         return temp;
     }
 
+    /// <summary>
+    /// Here we calcualte the average table stay in minutes with specific pax count
+    /// </summary>
+    /// <param name="givenPax"> The pax count we are calculating the time for</param>
+    /// <returns> Average stain in minutes</returns>
     private static int AverageStayInPax(int givenPax)
     {
         int tempInt = 0;
@@ -197,6 +209,10 @@ public static class CollectData
         return tempInt / tempCount;
     }
 
+    /// <summary>
+    /// Here we make a list of all pax count that actually came so we dont have to send data for pax that didint come today
+    /// </summary>
+    /// <returns> List of pax counts that came in</returns>
     private static List<int> MakeListOfPaxCounts()
     {
         List<int> tempCount = new List<int>();

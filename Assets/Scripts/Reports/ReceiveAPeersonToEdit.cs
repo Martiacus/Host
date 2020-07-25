@@ -14,12 +14,20 @@ public class ReceiveAPeersonToEdit : MonoBehaviour
 
     public DisableCanvas disableCanvas;
 
+    /// <summary>
+    /// Here we receive the info of the person we will edit
+    /// </summary>
+    /// <param name="name"> Person name</param>
+    /// <param name="email"> Person email</param>
     public void ReceiveInfo(string name, string email)
     {
         inputName.text = name;
         inputEmail.text = email;
     }
 
+    /// <summary>
+    /// Check for any errors in the information before saving
+    /// </summary>
     public void CheckErrors()
     {
         if (inputName.text == null || inputName.text == "")    // Checks if the name field is empty

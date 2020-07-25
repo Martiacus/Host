@@ -80,37 +80,66 @@ public class Controller : MonoBehaviour
         GameObject buttonGameobject;    // Our button gameobject (mini version before going to an enlarged version)
         public List<Table> tables;      // All the tables in this plan
 
+        /// <summary>
+        /// Creating a new table plan
+        /// </summary>
+        /// <param name="name1"> Name of table plan</param>
         public Plan(string name1)
         {
             name = name1;
             tables = new List<Table>();
         }
 
+        /// <summary>
+        /// Returns the plan Gameobject that we can interact with(enalrged version)
+        /// </summary>
+        /// <returns> Plan gameobject</returns>
         public GameObject GetPlanGameObject()
         {
             return planGameobject;
         }
 
+        /// <summary>
+        /// Retruns the button gamebject that enables the plan gameobject
+        /// </summary>
+        /// <returns> Plan button gameobject</returns>
         public GameObject GetButtonGameObject()
         {
             return buttonGameobject;
         }
 
+        /// <summary>
+        /// Here we set a new plan button gameobject
+        /// </summary>
+        /// <param name="gameObject"> Button gameobject</param>
         public void SetButtonGameobject(GameObject gameObject)
         {
             buttonGameobject = gameObject;
         }
 
+        /// <summary>
+        /// Here we set a new plan gameobject
+        /// </summary>
+        /// <param name="gameObject"> Plan gameobject</param>
         public void SetPlanGameobject(GameObject gameObject)
         {
             planGameobject = gameObject;
         }
 
+        /// <summary>
+        /// Here we return the table plan name
+        /// </summary>
+        /// <returns> Plan name</returns>
         public string GetPlanName()
         {
             return name;
         }
 
+        /// <summary>
+        /// Here we return a table class that stores table data by its name. Table names are "Table" + x and y coordinates in the plan 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public Table GetTableByName(string name)
         {
             foreach(Table table in tables)
